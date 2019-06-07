@@ -7,3 +7,9 @@ before_install:
 script:
   - docker build -t ebostijancic/siberiancms .
   - docker push ebostijancic/siberiancms
+
+deploy:
+  provider: script
+  script: docker push ebostijancic/siberiancms
+  on:
+    branch: master
